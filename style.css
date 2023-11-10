@@ -34,9 +34,10 @@
     margin-top: 10px;
     background-image: url(image/wallpapper.jpg);
     background-size: cover;
-    height: 516px;
+    height: 510px;
     position: relative;
     user-select: none;
+    display: none;
 }
 .screenbutton {
     height: 50px;
@@ -45,4 +46,7 @@
     justify-content: space-between;
     user-select: none;
     padding-left: 0.5rem 
+}
+.screen {
+    margin-top: 240px;
 }

@@ -13,46 +13,13 @@ calculating.style.display = "none";
 calculatingfirst.style.display = "none";
 
 
-let d = new Date();
-displaydate.innerHTML = d.toDateString();
-var getTimeDate = () => {
-    var j = new Date();
-    let myhrs = j.getHours();
-    let mymin =  j.getMinutes();
-    if (myhrs.toString().length < 2) {
-        myhrs = "0" + hr;
-    } 
-
-    if (mymin.toString().length <2) {
-        mymin = "0" + min;
-    }
-
-    if (myhrs>12) {
-        myhrs = myhrs-12;
-        displaytime.innerHTML = myhrs + ":" + mymin + " PM"
-    } else {
-        displaytime.innerHTML = myhrs + ":" + mymin + " AM" ;
-    }
-}
-setInterval(function() {
-    getTimeDate();
-}, 1000)
-
-
 
 var checkOpen = 0;
 
 function openMe() {
     checkOpen = 1;
     firstdisplay.style.display = "none";
-    forcalls.style.display = "none";
     anotherinner.style.display = "block";
-    showbalance.style.display = "none";
-    infogenerate.style.display = "none";
-    callopacity.style.display = "none";
-    forcallnumbers.style.display = "none";
-    forgame.style.display = "none";
-    forcal.style.display = "none";
 }
 
 
@@ -67,6 +34,7 @@ function goBack() {
         return;
     } else if (checkOpen == 1) {
         forcalls.style.display = "none";
+        anotherinner.style.display = "none";
         anotherinner.style.display = "block";
         showbalance.style.display = "none";
         infogenerate.style.display = "none";
