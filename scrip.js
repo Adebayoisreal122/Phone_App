@@ -1,5 +1,4 @@
 
-forcalls.style.display = "none";
 anotherinner.style.display = "none";
 showbalance.style.display = "none";
 infogenerate.style.display = "none";
@@ -8,7 +7,7 @@ forcallnumbers.style.display = "none";
 forgame.style.display = "none";
 secondphone.style.display = "none";
 invalidresult.style.display = "none";
-forcal.style.display = "none";
+calculate.style.display = "none";
 calculating.style.display = "none";
 calculatingfirst.style.display = "none";
 
@@ -16,19 +15,24 @@ calculatingfirst.style.display = "none";
 
 var checkOpen = 0;
 
-function openMe() {
+function Open() {
     checkOpen = 1;
     firstdisplay.style.display = "none";
     anotherinner.style.display = "block";
 }
 
 
-function offMe() {
+function Off() {
     anotherinner.style.display = "none";
     firstdisplay.style.display = "block";
     checkOpen = 0;
 }
-
+function displayCalc() {
+    console.log("i am here");
+    anotherinner.style.display = "none";
+    firstdisplay.style.display = "none"
+    calculate.displayCalc = "block";
+}
 function goBack() {
     if (checkOpen == 0) {
         return;
@@ -100,11 +104,7 @@ function cancelBalance() {
     showbalance.style.display = "none";
 }
 
-const displayCal = () => {
-    anotherinner.style.display = "none";
-    // firstdisplay.style.display = "block";
-    forcal.style.display = "block";
-}
+
 
 var array = [];
 
