@@ -1,13 +1,13 @@
 function appendToDisplay(value) {
-    document.getElementById('display').value += value;
+    document.getElementById('displayResult').value += value;
 }
 
 function clearDisplay() {
-    document.getElementById('display').value = '';
+    document.getElementById('displayResult').value = '';
 }
 
 function calculate() {
-    let expression = document.getElementById('display').value;
+    let expression = document.getElementById('displayResult').value;
     let result = eval(expression);
-    document.getElementById('display').value = result;
+    document.getElementById('displayResult').value = result;
 }

@@ -1,18 +1,5 @@
 
 anotherinner.style.display = "none";
-showbalance.style.display = "none";
-infogenerate.style.display = "none";
-callopacity.style.display = "none";
-forcallnumbers.style.display = "none";
-forgame.style.display = "none";
-secondphone.style.display = "none";
-invalidresult.style.display = "none";
-calculate.style.display = "none";
-calculating.style.display = "none";
-calculatingfirst.style.display = "none";
-
-
-
 var checkOpen = 0;
 
 function Open() {
@@ -27,81 +14,20 @@ function Off() {
     firstdisplay.style.display = "block";
     checkOpen = 0;
 }
-function displayCalc() {
+function DisplayCalc() {
     console.log("i am here");
     anotherinner.style.display = "none";
     firstdisplay.style.display = "none"
-    calculate.displayCalc = "block";
+    calculate.style.display = "block";
 }
 function goBack() {
     if (checkOpen == 0) {
         return;
     } else if (checkOpen == 1) {
-        forcalls.style.display = "none";
         anotherinner.style.display = "none";
         anotherinner.style.display = "block";
-        showbalance.style.display = "none";
-        infogenerate.style.display = "none";
-        callopacity.style.display = "none";
-        forcallnumbers.style.display = "none";
-        forgame.style.display = "none";
-        forcal.style.display = "none";
     }
     
-}
-
-function openGame() {
-    forgame.style.display = "block";
-    forcalls.style.display = "none";
-    anotherinner.style.display = "none";
-    showbalance.style.display = "none";
-    infogenerate.style.display = "none";
-    callopacity.style.display = "none";
-    forcallnumbers.style.display = "none";
-}
-
-function simSelect() {
-    if (displaynumber.value == "") {
-        return;
-    } else {
-        callopacity.style.display = "block";
-        selectsim.style.display = "block";
-        showbalance.style.display = "none";
-    }
-    
-}
-
-
-function delInfo() {
-    infogenerate.style.display = "none";
-}
-
-
-function displayCall() {
-    forcalls.style.display = "block";	
-}
-
-function showNumbers(num) {
-    displaynumber.value += num;
-
-}
-
-function deleteMe() {
-    displaynumber.value = displaynumber.value.substr(0,displaynumber.value.length-1)
-}
-
-function deleteAll() {
-    displaynumber.value = "";
-}
-
-function delCallOpacity() {
-    callopacity.style.display = "none";
-}
-
-function cancelBalance() {
-    callopacity.style.display = "none";
-    displaynumber.value = "";
-    showbalance.style.display = "none";
 }
 
 
@@ -217,47 +143,6 @@ function generate() {
 }
 
 
-function showAllCard()  {
-
-    var getallcard = JSON.parse(localStorage.getItem("Voucher"));
-    result.innerHTML = "";
-
-    var cardElement = "";
-    getallcard.map(card => {
-        if(card.status == "used"){
-            cardElement += `
-                <div class="row mb-3 bg-white rounded">
-                    <div class="col-12">
-                        <div class="row p-2 text-dark bg-white shadow-sm">
-                            <div class="col-3 text-left">${card.cardname.toUpperCase()}</div>
-                            <div class="col-6 text-center text-danger h6">${card.status.toUpperCase()}</div>
-                            <div class="col-3 text-right">#${card.cardamount}</div>
-                        </div>
-                        <div class="row text-center p-2">
-                            <div class="col-12"><p class="text-danger h5">${card.code}</p></div>
-                        </div>
-                    </div>
-                </div>
-            `
-        } else if(card.status == "notused"){
-            cardElement += `
-                <div class="row mb-3 bg-white rounded">
-                    <div class="col-12">
-                        <div class="row p-2 text-dark bg-white shadow">
-                            <div class="col-3 text-left">${card.cardname.toUpperCase()}</div>
-                            <div class="col-6 text-center text-success h6">${card.status.toUpperCase()}</div>
-                            <div class="col-3 text-right">#${card.cardamount}</div>
-                        </div>
-                        <div class="row text-center p-2">
-                            <div class="col-12"><p class="text-success h5">${card.code}</p></div>
-                        </div>
-                    </div>
-                </div>
-            `
-        }
-    })
-    result.innerHTML = cardElement;
-}
 
 
 if (localStorage.accountbal == null) {
@@ -269,7 +154,7 @@ if (localStorage.accountbal == "") {
     localStorage.setItem("accountbal", JSON.stringify(allBalance));
 }
 
-// BEGINNING OF CODES TO LOAD MTN CARD
+//  LOAD MTN CARD
 var audioElement;
 var timeout;
 
@@ -407,9 +292,7 @@ function loadCard() {
     }
 }
 
-// END OF CODES TO LOAD MTN CARD
-
-// BEGINNING OF CODES TO LOAD AIRTEL CARD
+// LOAD AIRTEL CARD
 
 function loadCardAirtel() {
     if (displaynumber.value.length == 22) {
@@ -553,10 +436,8 @@ function loadCardAirtel() {
     }
 }
 
-// END OF CODES TO LOAD AIRTEL CARD
 
-
-// BEGINNING OF CODES TO LOAD GLO CARD
+//  LOAD GLO CARD
 
 function loadCardGlo() {
     if (displaynumber.value.length == 21) {
@@ -687,13 +568,8 @@ function loadCardGlo() {
         callersno.innerHTML = displaynumber.value;
         network.innerHTML = "Glo";
     }	
-} 
-
-// END OF CODES TO LOAD GLO CARD
-
-
-    // BEGINNING OF CODES TO LOAD 9mobile CARD
-
+}
+// LOAD 9mobile CARD
 
 function loadCard9mobile() {
     if (displaynumber.value.length == 21) {
@@ -1088,17 +964,4 @@ const endCall = () => {
         
     }
     
-}
-
-checktimeout = () => {
-if (audioElement.currentTime > 30) {
-audioElement.pause();
-secondphone.style.display = "none";
-forcalls.style.display = "block";
-callopacity.style.display = "block";
-selectsim.style.display = "none";
-showbalance.style.display = "block";
-displaybalance.innerHTML = "Timeout";
-clearInterval(timeout);
-}
 }

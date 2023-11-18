@@ -14,7 +14,7 @@
 		<h1 class="text-center">Double tap on phone to wake it up</h1>
 		<div class="container-fluid">
 
-			<div class="row">
+			<div class="row col-12">
 				<div class=" border border-2 border-dark gen ms-5 w-25 bg-secondary rounded rounded-5 col-12 col-md-4">
 
 					<div class="all mx-auto">
@@ -72,13 +72,13 @@
 								<div class="screen ">
 									<div class="screenbutton pl-2 pr-2">
 										<div class="bg-success rounded-4 "><img src="image/game.png" class="m-1"></div>
-										<div class="bg-primary rounded-4 " onclick="displayCalc()"><img src="image/calculator.png" class="m-1"></div>
+										<div class="bg-primary rounded-4 " onclick="DisplayCalc()"><img src="image/calculator.png" class="m-1"></div>
 										<div class="bg-info rounded-4 "><img src="image/music.png" class="m-1"></div>
 										<div class="bg-secondary rounded-4 "><img src="image/chrome.png" class="m-1"></div>
 									</div>
 									<div class="w-25 mx-auto"><img src="image/more.png" class="pl-3"></div>
 									<div class="screenbutton mt-1 pl-2 pr-2">
-										<div class="bg-success rounded-4 onclick="displayCall()"><img src="image/phone.png" class="m-1"></div>
+										<div class="bg-success rounded-4"><img src="image/phone.png" class="m-1"></div>
 										<div class="bg-primary rounded-4 "><img src="image/contact.png" class="m-1"></div>
 										<div class="bg-info rounded-4 "><img src="image/message.png" class="m-1"></div>
 										<div class="bg-secondary rounded-4 "><img src="image/camera.png" class="m-1"></div>
@@ -92,13 +92,52 @@
 
 							<div onclick="goBack()"><img src="image/sortleft.png" alt=""></div>
 						</div>
+						
 					</div>
+					<div class=" border border-3 border-dark gen ms-5 w-25  rounded rounded-5 col-12 col-md-4">
+						<div class="all mx-auto">
+							<div class="w-75 mx-auto house container mt-3 gap-4">
+								<div class="round rounded-5"></div>
+	
+								<div class="rect w-50"></div>
+	
+								<div class="round rounded-5"></div></div>
+							</div>
+							<div ></div>
+	
+								<div >
+									<div class="fornetwork">
+										<span><img src="image/whitesignal2.png"></span>
+										<span><img src="image/whitesignal1.png" ></span>
+										<span><img src="image/whitesignal2.png"></span>
+										<span><img src="image/whitesignal1.png" ></span>
+										<span><img src="image/whitebattery.png" class="pl-1"></span>
+									</div>
+									
+	
+									<div class="clock ms-5 text-light mt-5">
+										<h1 id="time"></h1>
+									</div>
+									<div class="screen ">
+										
+									</div>
+								</div>
+								<div class="w-75 house mx-auto mt-2 gap-4">
+								<div><img src="image/square.png" alt=""></div>
+	
+								<div onclick="goBack()"><img src="image/circle.png" alt=""></div>
+	
+								<div onclick="goBack()"><img src="image/sortleft.png" alt=""></div>
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
-		<div id="calculator"  class="calc">
-			<div id="calculate" class="calcul">
-				<input type="text" id="display" readonly>
+		<div id="ca"  class="calc border border-2 container w-75">
+			<div id="calculate" class="calcul form-control">
+				<input type="text" id="displayResult" readonly>
 				<div class="keypad">
 					<button onclick="appendToDisplay('1')">1</button>
 					<button onclick="appendToDisplay('2')">2</button>
