@@ -30,7 +30,7 @@
     height: 510px;
     background-color: rgba(255,255,255, 0.025);
         margin-top: 6px;}
-#anotherinner {
+#inside {
     margin-top: 10px;
     background-image: url(image/wallpapper.jpg);
     background-size: cover;

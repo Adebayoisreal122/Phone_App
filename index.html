@@ -56,7 +56,7 @@
 						</div>
 						<div id="firstdisplay" ondblclick="Open()"></div>
 
-							<div id="anotherinner" ondblclick="Off()">
+							<div id="inside" ondblclick="Off()">
 								<div class="fornetwork">
 									<span><img src="image/whitesignal2.png"></span>
 									<span><img src="image/whitesignal1.png" ></span>
@@ -135,8 +135,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="ca"  class="calc border border-2 container w-75">
-			<div id="calculate" class="calcul form-control">
+		<div id="calculate" onclick="calc()"></div>
+				<div id="ca"  class="calc border border-2 container w-75">
+			<div id="calcul" class="calcul form-control">
 				<input type="text" id="displayResult" readonly>
 				<div class="keypad">
 					<button onclick="appendToDisplay('1')">1</button>
@@ -160,6 +161,7 @@
 					
 				</div>
 			</div>
+						</div>
 		</div>
 
 

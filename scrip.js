@@ -1,22 +1,26 @@
 
-anotherinner.style.display = "none";
+inside.style.display = "none";
 var checkOpen = 0;
 
 function Open() {
     checkOpen = 1;
     firstdisplay.style.display = "none";
-    anotherinner.style.display = "block";
+    inside.style.display = "block";
+}
+function calc() {
+    checkOpen = 1;
+    firstdisplay.style.display = "none";
+    calculate.style.display = "block";
 }
 
-
 function Off() {
-    anotherinner.style.display = "none";
+    inside.style.display = "none";
     firstdisplay.style.display = "block";
     checkOpen = 0;
 }
 function DisplayCalc() {
     console.log("i am here");
-    anotherinner.style.display = "none";
+    inside.style.display = "none";
     firstdisplay.style.display = "none"
     calculate.style.display = "block";
 }
@@ -24,8 +28,8 @@ function goBack() {
     if (checkOpen == 0) {
         return;
     } else if (checkOpen == 1) {
-        anotherinner.style.display = "none";
-        anotherinner.style.display = "block";
+        inside.style.display = "none";
+        inside.style.display = "block";
     }
     
 }
