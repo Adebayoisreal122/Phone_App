@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess the Number</title>
+</head>
+<body>
+  <h1>Guess the Number</h1>
+  <p>Try to guess the secret number between 1 and 100.</p>
+  <input type="number" id="guessInput">
+  <button onclick="checkGuess()">Guess</button>
+  <p id="result"></p>
+
+  <script>
+    // Generate a random secret number between 1 and 100
+    var secretNumber = Math.floor(Math.random() * 100) + 1;
+    var resultElement = document.getElementById('result');
+
+    function checkGuess() {
+      var guessInput = document.getElementById('guessInput');
+      var guess = parseInt(guessInput.value);
+
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        resultElement.textContent = 'Please enter a valid number between 1 and 100.';
+      } else if (guess === secretNumber) {
+        resultElement.textContent = 'Congratulations! You guessed the correct number!';
+      } else if (guess < secretNumber) {
+        resultElement.textContent = 'Too low! Try a higher number.';
+      } else {
+        resultElement.textContent = 'Too high! Try a lower number.';
+      }
+
+      // Clear the input field
+      guessInput.value = '';
+    }
+  </script>
+</body>
+</html>

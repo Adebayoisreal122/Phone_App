@@ -6,8 +6,8 @@ function clearDisplay() {
     document.getElementById('displayResult').value = '';
 }
 
-function calculate() {
+function calculator() {
     let expression = document.getElementById('displayResult').value;
     let result = eval(expression);
     document.getElementById('displayResult').value = result;
-}
+} 

@@ -39,6 +39,13 @@
     user-select: none;
     display: none;
 }
+#firstdisplay {
+    margin-top: 10px;
+    background-size: cover;
+    height: 510px;
+    position: relative;
+    user-select: none;
+}
 .screenbutton {
     height: 50px;
     display: flex;
@@ -49,4 +56,7 @@
 }
 .screen {
     margin-top: 240px;
+}
+.incoming{
+display: none;
 }

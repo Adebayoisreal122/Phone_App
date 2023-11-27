@@ -4,7 +4,9 @@ function updateTime() {
     var minutes = currentTime.getMinutes();
     // var seconds = currentTime.getSeconds();
     var year = currentTime.getFullYear();
+    let date = new Date().toLocaleDateString()
 
+    show.innerHTML = `${date}`
     // Determine AM or PM
     var meridiem = hours >= 12 ? "PM" : "AM";
 

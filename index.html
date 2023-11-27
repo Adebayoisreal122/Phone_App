@@ -39,7 +39,7 @@
 								<option>1000</option>
 							</select>
 
-							<button class="btn mt-3 ml-5 btn-success button" onclick="generate()">Generate Card</button>
+							<button class="btn mt-3 ml-5 btn-success" onclick="generate()">Generate Card</button>
 						</div>
 						<div id="infogenerate" class="w-100 p-2"></div>
 						<div class="m-3 text-white" id="result"></div>
@@ -68,18 +68,19 @@
 
 								<div class="clock ms-5 text-light mt-5">
 									<h1 id="time"></h1>
+									<h3 id="show"></h3>
 								</div>
 								<div class="screen ">
 									<div class="screenbutton pl-2 pr-2">
 										<div class="bg-success rounded-4 "><img src="image/game.png" class="m-1"></div>
 										<div class="bg-primary rounded-4 " onclick="DisplayCalc()"><img src="image/calculator.png" class="m-1"></div>
-										<div class="bg-info rounded-4 "><img src="image/music.png" class="m-1"></div>
+										<div class="bg-info rounded-4 " onclick="music()"><img src="image/music.png" class="m-1"></div>
 										<div class="bg-secondary rounded-4 "><img src="image/chrome.png" class="m-1"></div>
 									</div>
 									<div class="w-25 mx-auto"><img src="image/more.png" class="pl-3"></div>
 									<div class="screenbutton mt-1 pl-2 pr-2">
-										<div class="bg-success rounded-4"><img src="image/phone.png" class="m-1"></div>
-										<div class="bg-primary rounded-4 "><img src="image/contact.png" class="m-1"></div>
+										<div class="bg-success rounded-4" onclick="phone()"><img src="image/phone.png" class="m-1"></div>
+										<div class="bg-primary rounded-4 " onclick="contact()"><img src="image/contact.png" class="m-1"></div>
 										<div class="bg-info rounded-4 "><img src="image/message.png" class="m-1"></div>
 										<div class="bg-secondary rounded-4 "><img src="image/camera.png" class="m-1"></div>
 									</div>
@@ -94,7 +95,7 @@
 						</div>
 						
 					</div>
-					<div class=" border border-3 border-dark gen ms-5 w-25  rounded rounded-5 col-12 col-md-4">
+					<div class=" incoming border border-3 border-dark gen ms-5 w-25  rounded rounded-5 col-12 col-md-4">
 						<div class="all mx-auto">
 							<div class="w-75 mx-auto house container mt-3 gap-4">
 								<div class="round rounded-5"></div>
@@ -135,9 +136,8 @@
 				</div>
 			</div>
 		</div>
-		<div id="calculate" onclick="calc()"></div>
-				<div id="ca"  class="calc border border-2 container w-75">
-			<div id="calcul" class="calcul form-control">
+		<div id="calculate" class="calc ">
+			<div id="calc" class="calcul form-control">
 				<input type="text" id="displayResult" readonly>
 				<div class="keypad">
 					<button onclick="appendToDisplay('1')">1</button>
@@ -156,12 +156,9 @@
 					<button onclick="appendToDisplay('0')">0</button>
 					<button onclick="appendToDisplay('-')">-</button>
 					<button onclick="appendToDisplay('+')">+</button>
-					<button onclick="calculate()">=</button>
-					
-					
+					<button onclick="calculator()">=</button>
 				</div>
 			</div>
-						</div>
 		</div>
 
 
