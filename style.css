@@ -35,6 +35,8 @@
     background-image: url(image/wallpapper.jpg);
     background-size: cover;
     height: 510px;
+    width: 100%;
+    border-radius: 5px;
     position: relative;
     user-select: none;
     display: none;
@@ -46,16 +48,21 @@
     position: relative;
     user-select: none;
 }
+#gaming {
+    margin-top: 10px;
+    height: 510px;
+}
 .screenbutton {
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     user-select: none;
-    padding-left: 0.5rem 
+    padding-left: 0.5rem; 
 }
 .screen {
-    margin-top: 240px;
+    margin-top: 180px;
+    justify-content: center;
 }
 .incoming{
 display: none;

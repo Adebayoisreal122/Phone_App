@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Game</title>
+  <style>
+    .card {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 5px;
+      text-align: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Memory Game</h1>
+  <div id="game-board"></div>
+
+  <script>
+    // Array of card values
+    var cardValues = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F'];
+
+    // Shuffle the card values
+    cardValues.sort(function() {
+      return 0.5 - Math.random();
+    });
+
+    // Create the game board
+    var gameBoard = document.getElementById('game-board');
+    for (var i = 0; i < cardValues.length; i++) {
+      var card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = '&nbsp;'; // Display nothing initially
+      card.dataset.value = cardValues[i];
+      card.addEventListener('click', flipCard);
+      gameBoard.appendChild(card);
+    }
+
+    var flippedCards = [];
+
+    function flipCard() {
+      if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
+        this.innerHTML = this.dataset.value;
+        this.classList.add('flipped');
+        flippedCards.push(this);
+
+        if (flippedCards.length === 2) {
+          var card1 = flippedCards[0];
+          var card2 = flippedCards[1];
+
+          if (card1.dataset.value === card2.dataset.value) {
+            // Matched cards
+            flippedCards = [];
+          } else {
+            // Unmatched cards - flip back after a short delay
+            setTimeout(function() {
+              card1.innerHTML = '&nbsp;';
+              card2.innerHTML = '&nbsp;';
+              card1.classList.remove('flipped');
+              card2.classList.remove('flipped');
+              flippedCards = [];
+            }, 1000);
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="calc.css">
+	<link rel="stylesheet" href="game.css">
 </head>
 <body>
     <body>
@@ -54,6 +55,8 @@
 
 							<div class="round rounded-5"></div></div>
 						</div>
+						<div>
+						
 						<div id="firstdisplay" ondblclick="Open()"></div>
 
 							<div id="inside" ondblclick="Off()">
@@ -72,7 +75,7 @@
 								</div>
 								<div class="screen ">
 									<div class="screenbutton pl-2 pr-2">
-										<div class="bg-success rounded-4 "><img src="image/game.png" class="m-1"></div>
+										<div class="bg-success rounded-4 " onclick="playGame()"><img src="image/game.png" class="m-1"></div>
 										<div class="bg-primary rounded-4 " onclick="DisplayCalc()"><img src="image/calculator.png" class="m-1"></div>
 										<div class="bg-info rounded-4 " onclick="music()"><img src="image/music.png" class="m-1"></div>
 										<div class="bg-secondary rounded-4 "><img src="image/chrome.png" class="m-1"></div>
@@ -86,6 +89,47 @@
 									</div>
 								</div>
 							</div>
+							<div id="allcalc" class="calcul form-control">
+				<input type="text" id="displayResult" readonly>
+				<div class="keypad">
+					<button onclick="appendToDisplay('1')">1</button>
+					<button onclick="appendToDisplay('2')">2</button>
+					<button onclick="appendToDisplay('3')">3</button>
+					<button onclick="clearDisplay()">C</button>
+					<button onclick="appendToDisplay('4')">4</button>
+					<button onclick="appendToDisplay('5')">5</button>
+					<button onclick="appendToDisplay('6')">6</button>
+					<button onclick="appendToDisplay('/')">/</button>
+					<button onclick="appendToDisplay('7')">7</button>
+					<button onclick="appendToDisplay('8')">8</button>
+					<button onclick="appendToDisplay('9')">9</button>
+					<button onclick="appendToDisplay('*')">x</button>
+					<button onclick="appendToDisplay('.')">.</button>
+					<button onclick="appendToDisplay('0')">0</button>
+					<button onclick="appendToDisplay('-')">-</button>
+					<button onclick="appendToDisplay('+')">+</button>
+					<button onclick="calculator()">=</button>
+				</div>
+		</div>
+		</div>
+		<div id="calculate" class="calc ">
+		</div>
+			<div id="gaming">
+		<center>
+      <h1>Tic Tac Toe</h1>
+    </center>
+    <div class="board">
+    <div class="cell" onclick="makeMove(0, 0)"></div>
+    <div class="cell" onclick="makeMove(0, 1)"></div>
+    <div class="cell" onclick="makeMove(0, 2)"></div>
+    <div class="cell" onclick="makeMove(1, 0)"></div>
+    <div class="cell" onclick="makeMove(1, 1)"></div>
+    <div class="cell" onclick="makeMove(1, 2)"></div>
+    <div class="cell" onclick="makeMove(2, 0)"></div>
+    <div class="cell" onclick="makeMove(2, 1)"></div>
+    <div class="cell" onclick="makeMove(2, 2)"></div>
+  </div>
+		</div>
 							<div class="w-75  house mx-auto mt-2 gap-4">
 							<div><img src="image/square.png" alt=""></div>
 
@@ -95,6 +139,7 @@
 						</div>
 						
 					</div>
+						</div>
 					<div class=" incoming border border-3 border-dark gen ms-5 w-25  rounded rounded-5 col-12 col-md-4">
 						<div class="all mx-auto">
 							<div class="w-75 mx-auto house container mt-3 gap-4">
@@ -136,34 +181,11 @@
 				</div>
 			</div>
 		</div>
-		<div id="calculate" class="calc ">
-			<div id="calc" class="calcul form-control">
-				<input type="text" id="displayResult" readonly>
-				<div class="keypad">
-					<button onclick="appendToDisplay('1')">1</button>
-					<button onclick="appendToDisplay('2')">2</button>
-					<button onclick="appendToDisplay('3')">3</button>
-					<button onclick="clearDisplay()">C</button>
-					<button onclick="appendToDisplay('4')">4</button>
-					<button onclick="appendToDisplay('5')">5</button>
-					<button onclick="appendToDisplay('6')">6</button>
-					<button onclick="appendToDisplay('/')">/</button>
-					<button onclick="appendToDisplay('7')">7</button>
-					<button onclick="appendToDisplay('8')">8</button>
-					<button onclick="appendToDisplay('9')">9</button>
-					<button onclick="appendToDisplay('*')">x</button>
-					<button onclick="appendToDisplay('.')">.</button>
-					<button onclick="appendToDisplay('0')">0</button>
-					<button onclick="appendToDisplay('-')">-</button>
-					<button onclick="appendToDisplay('+')">+</button>
-					<button onclick="calculator()">=</button>
-				</div>
-			</div>
-		</div>
-
-
+		<div class="allcalc">
+			
     <script src="scrip.js"></script>
 	<script src="clock.js"></script>
 	<script src="calc.js"></script>
+	<script src="game.js"></script>
 </body>
 </html>

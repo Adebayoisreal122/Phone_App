@@ -1,25 +1,40 @@
 firstdisplay.style.display = "block";
 inside.style.display = "none";
 calculate.style.display = "none";
+gaming.style.display = "none";
+allcalc.style.display = "none";
+    calc.style.display = "none";
 
 function Open() {
     checkOpen = 1;
     firstdisplay.style.display = "none";
     inside.style.display = "block";
     calculate.style.display = "none";
+    gaming.style.display = "none";
+    allcalc.style.display = "none";
+    calc.style.display = "none";
 }
 
 function Off() {
     inside.style.display = "none";
     calculate.style.display = "none";
     firstdisplay.style.display = "block";
+    gaming.style.display = "none";
+    allcalc.style.display = "none";
     checkOpen = 0;
 }
 function DisplayCalc() {
     console.log("i am here");
     inside.style.display = "none";
+    gaming.style.display = "none";
     firstdisplay.style.display = "none";
-    calculate.style.display = "block";
+    allcalc.style.display = "block";
+}
+function playGame() {
+    inside.style.display = "none";
+    gaming.style.display = "block";
+    firstdisplay.style.display = "none";
+    allcalc.style.display = "none";
 }
 function goBack() {
     if (checkOpen == 0) {
@@ -27,6 +42,7 @@ function goBack() {
     } else if (checkOpen == 1) {
         inside.style.display = "none";
         inside.style.display = "block";
+        allcalc.style.display = "none"
     }
     
 }

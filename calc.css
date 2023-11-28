@@ -1,11 +1,32 @@
 
-#calculate {
+.calcul{
     margin-top: 10px;
-    height: 510px;
-    position: relative;
-    user-select: none;
-    /* display: none; */
+    box-sizing: border-box;
+height: 510px;
+text-size-adjust: 100%;
+user-select: none;
+
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
+/* .wrapper{
+    background-color: rgb(52, 58, 64);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+box-sizing: border-box;
+color: rgb(33, 37, 41);
+display: none;
+font-size: 16px;
+font-weight: 400;
+height: 516px;
+line-height: 24px;
+position: relative;
+text-align: left;
+user-select: none;
+width: auto;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+} */
 .keypad {
     width: 50%;
     margin: auto;

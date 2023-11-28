@@ -1,36 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Guess the Number</title>
+  <title>Tic Tac Toe</title>
+  <style>
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      background-color: #eee;
+      font-size: 48px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Guess the Number</h1>
-  <p>Try to guess the secret number between 1 and 100.</p>
-  <input type="number" id="guessInput">
-  <button onclick="checkGuess()">Guess</button>
-  <p id="result"></p>
+    <center>
+
+      <h1>Tic Tac Toe</h1>
+    </center>
+    <div class="board">
+    <div class="cell" onclick="makeMove(0, 0)"></div>
+    <div class="cell" onclick="makeMove(0, 1)"></div>
+    <div class="cell" onclick="makeMove(0, 2)"></div>
+    <div class="cell" onclick="makeMove(1, 0)"></div>
+    <div class="cell" onclick="makeMove(1, 1)"></div>
+    <div class="cell" onclick="makeMove(1, 2)"></div>
+    <div class="cell" onclick="makeMove(2, 0)"></div>
+    <div class="cell" onclick="makeMove(2, 1)"></div>
+    <div class="cell" onclick="makeMove(2, 2)"></div>
+  </div>
 
   <script>
-    // Generate a random secret number between 1 and 100
-    var secretNumber = Math.floor(Math.random() * 100) + 1;
-    var resultElement = document.getElementById('result');
+    var board = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
+    ];
 
-    function checkGuess() {
-      var guessInput = document.getElementById('guessInput');
-      var guess = parseInt(guessInput.value);
+    var currentPlayer = 'X';
 
-      if (isNaN(guess) || guess < 1 || guess > 100) {
-        resultElement.textContent = 'Please enter a valid number between 1 and 100.';
-      } else if (guess === secretNumber) {
-        resultElement.textContent = 'Congratulations! You guessed the correct number!';
-      } else if (guess < secretNumber) {
-        resultElement.textContent = 'Too low! Try a higher number.';
-      } else {
-        resultElement.textContent = 'Too high! Try a lower number.';
+    function makeMove(row, col) {
+      if (board[row][col] === '') {
+        board[row][col] = currentPlayer;
+        document.getElementsByClassName('cell')[row * 3 + col].textContent = currentPlayer;
+
+        if (checkWin()) {
+          alert('Player ' + currentPlayer + ' wins!');
+          resetBoard();
+        } else if (checkDraw()) {
+          alert('It\'s a draw!');
+          resetBoard();
+        } else {
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+      }
+    }
+
+    function checkWin() {
+      // Check rows
+      for (var row = 0; row < 3; row++) {
+        if (board[row][0] !== '' && board[row][0] === board[row][1] && board[row][0] === board[row][2]) {
+          return true;
+        }
       }
 
-      // Clear the input field
-      guessInput.value = '';
+      // Check columns
+      for (var col = 0; col < 3; col++) {
+        if (board[0][col] !== '' && board[0][col] === board[1][col] && board[0][col] === board[2][col]) {
+          return true;
+        }
+      }
+
+      // Check diagonals
+      if (board[0][0] !== '' && board[0][0] === board[1][1] && board[0][0] === board[2][2]) {
+        return true;
+      }
+      if (board[0][2] !== '' && board[0][2] === board[1][1] && board[0][2] === board[2][0]) {
+        return true;
+      }
+
+      return false;
+    }
+
+    function checkDraw() {
+      for (var row = 0; row < 3; row++) {
+        for (var col = 0; col < 3; col++) {
+          if (board[row][col] === '') {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function resetBoard() {
+      board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+      ];
+
+      var cells = document.getElementsByClassName('cell');
+      for (var i = 0; i < cells.length; i++) {
+        cells[i].textContent = '';
+      }
+
+      currentPlayer = 'X';
     }
   </script>
 </body>
