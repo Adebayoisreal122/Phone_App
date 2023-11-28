@@ -3,7 +3,7 @@ inside.style.display = "none";
 calculate.style.display = "none";
 gaming.style.display = "none";
 allcalc.style.display = "none";
-    calc.style.display = "none";
+    playmu.style.display = "none";
 
 function Open() {
     checkOpen = 1;
@@ -13,6 +13,7 @@ function Open() {
     gaming.style.display = "none";
     allcalc.style.display = "none";
     calc.style.display = "none";
+    playmu.style.display = "none";
 }
 
 function Off() {
@@ -21,6 +22,7 @@ function Off() {
     firstdisplay.style.display = "block";
     gaming.style.display = "none";
     allcalc.style.display = "none";
+    playmu.style.display = "none";
     checkOpen = 0;
 }
 function DisplayCalc() {
@@ -29,12 +31,21 @@ function DisplayCalc() {
     gaming.style.display = "none";
     firstdisplay.style.display = "none";
     allcalc.style.display = "block";
+    playmu.style.display = "none";
 }
 function playGame() {
     inside.style.display = "none";
     gaming.style.display = "block";
     firstdisplay.style.display = "none";
     allcalc.style.display = "none";
+    playmu.style.display = "none";
+}
+function playmus() {
+    inside.style.display = "none";
+    gaming.style.display = "none";
+    firstdisplay.style.display = "none";
+    allcalc.style.display = "none";
+    playmu.style.display = "block";
 }
 function goBack() {
     if (checkOpen == 0) {
@@ -42,7 +53,9 @@ function goBack() {
     } else if (checkOpen == 1) {
         inside.style.display = "none";
         inside.style.display = "block";
-        allcalc.style.display = "none"
+        allcalc.style.display = "none";
+        gaming.style.display = "none";
+        playmu.style.display = "none";
     }
     
 }

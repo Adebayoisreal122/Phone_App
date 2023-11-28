@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="calc.css">
 	<link rel="stylesheet" href="game.css">
+	<link rel="stylesheet" href="music.css
+	">
 </head>
 <body>
     <body>
@@ -77,7 +79,7 @@
 									<div class="screenbutton pl-2 pr-2">
 										<div class="bg-success rounded-4 " onclick="playGame()"><img src="image/game.png" class="m-1"></div>
 										<div class="bg-primary rounded-4 " onclick="DisplayCalc()"><img src="image/calculator.png" class="m-1"></div>
-										<div class="bg-info rounded-4 " onclick="music()"><img src="image/music.png" class="m-1"></div>
+										<div class="bg-info rounded-4 " onclick="playmus()"><img src="image/music.png" class="m-1"></div>
 										<div class="bg-secondary rounded-4 "><img src="image/chrome.png" class="m-1"></div>
 									</div>
 									<div class="w-25 mx-auto"><img src="image/more.png" class="pl-3"></div>
@@ -90,7 +92,7 @@
 								</div>
 							</div>
 							<div id="allcalc" class="calcul form-control">
-				<input type="text" id="displayResult" readonly>
+				<input class="display" type="text" id="displayResult" readonly>
 				<div class="keypad">
 					<button onclick="appendToDisplay('1')">1</button>
 					<button onclick="appendToDisplay('2')">2</button>
@@ -129,6 +131,18 @@
     <div class="cell" onclick="makeMove(2, 1)"></div>
     <div class="cell" onclick="makeMove(2, 2)"></div>
   </div>
+		</div>
+		<div id="playmu">
+		<div id="music-list">
+      <p><a href="music/06-Omah-Lay-Temptations-(JustNaija.com).mp3">Music 1</a></p>
+      <p><a href="music/Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com).mp3
+      ">Music 2</a></p>
+      <p><a href="music/Kizz-Daniel-One-Day-(JustNaija.com).mp3
+      ">Music 3</a></p>
+    </div>
+    <audio id="music" controls>
+      <source src="" type="audio/mpeg">
+    </audio>
 		</div>
 							<div class="w-75  house mx-auto mt-2 gap-4">
 							<div><img src="image/square.png" alt=""></div>
@@ -182,7 +196,7 @@
 			</div>
 		</div>
 		<div class="allcalc">
-			
+	<script src="music.js"></script>
     <script src="scrip.js"></script>
 	<script src="clock.js"></script>
 	<script src="calc.js"></script>
