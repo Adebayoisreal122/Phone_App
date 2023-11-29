@@ -1,13 +1,17 @@
 #playmu {
     margin-top: 10px;
-    background-image: url(image/wallpapper.jpg);
-    background-size: cover;
     height: 510px;
     width: 100%;
     border-radius: 5px;
     position: relative;
+    text-decoration: none;
+
     user-select: none;
     display: none;
     padding-top: 10px;
     padding-left: 10px;
+}
+#playmu #music-list p a {
+    text-decoration: none;
+    color: goldenrod;
 }
