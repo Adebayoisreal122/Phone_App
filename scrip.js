@@ -3,7 +3,8 @@ inside.style.display = "none";
 calculate.style.display = "none";
 gaming.style.display = "none";
 allcalc.style.display = "none";
-    playmu.style.display = "none";
+playmu.style.display = "none";
+fornumbers.style.display = "none"
 
 function Open() {
     checkOpen = 1;
@@ -14,6 +15,18 @@ function Open() {
     allcalc.style.display = "none";
     calc.style.display = "none";
     playmu.style.display = "none";
+    fornumbers.style.display = "none";
+}
+function phone() {
+    checkOpen = 1;
+    firstdisplay.style.display = "none";
+    inside.style.display = "none";
+    calculate.style.display = "none";
+    gaming.style.display = "none";
+    allcalc.style.display = "none";
+    calc.style.display = "none";
+    playmu.style.display = "none";
+    fornumbers.style.display = "block"
 }
 
 function Off() {
@@ -23,6 +36,7 @@ function Off() {
     gaming.style.display = "none";
     allcalc.style.display = "none";
     playmu.style.display = "none";
+    fornumbers.style.display = "none"
     checkOpen = 0;
 }
 function DisplayCalc() {
@@ -32,6 +46,7 @@ function DisplayCalc() {
     firstdisplay.style.display = "none";
     allcalc.style.display = "block";
     playmu.style.display = "none";
+    fornumbers.style.display = "none"
 }
 function playGame() {
     inside.style.display = "none";
@@ -39,6 +54,7 @@ function playGame() {
     firstdisplay.style.display = "none";
     allcalc.style.display = "none";
     playmu.style.display = "none";
+    fornumbers.style.display = "none"
 }
 function playmus() {
     inside.style.display = "none";
@@ -46,6 +62,7 @@ function playmus() {
     firstdisplay.style.display = "none";
     allcalc.style.display = "none";
     playmu.style.display = "block";
+    fornumbers.style.display = "none"
 }
 function goBack() {
     if (checkOpen == 0) {
@@ -55,6 +72,7 @@ function goBack() {
         inside.style.display = "block";
         allcalc.style.display = "none";
         gaming.style.display = "none";
+        fornumbers.style.display = "none";  
         playmu.style.display = "none";
     }
     

@@ -41,6 +41,27 @@
     user-select: none;
     display: none;
 }
+/* #fornumbers {
+
+display: none;
+} */
+.numberbox {
+	height: 40px;
+	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0, 0.1);
+	text-align: center;
+	font-size: 17pt;
+	position: relative;
+	user-select: none;
+}
+#fornumbers {
+    margin-top: 10px;
+    background-color: aliceblue;
+    height: 510px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    /* display: none; */
+}
 #firstdisplay {
     margin-top: 10px;
     background-size: cover;
