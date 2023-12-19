@@ -4,7 +4,7 @@
 /* Voulcher css */
 .all {
     background-image: url(img/voucherbg.png);
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-size: cover;
 	height: 650px;
@@ -134,7 +134,7 @@ option{
 }
 
 #inside {
-	background-image: url(img/phonewalpaper.jpg);
+	background-image: url(img/wallpapper.jpg);
 	background-size: cover;
 	height: 516px;
 	position: relative;
@@ -446,22 +446,22 @@ h2{
 /*  CAL CSS */
 
 .caculator{
-    background: #1b1c1c;
+    background: #5a5f5f;
     border-radius:  10px;
 	height: 499px;
 }
 .caculator form input{
     border: 0;
-    padding: 0;
+    padding: 0px;
     outline: 0;
     width: 40px;
-    height: 50px;
-    border-radius: 10px;
+    height: 40px;
+    border-radius: 5px;
     box-shadow: -8px -8px 15px rgba(176, 169, 169, 0.1),5px 5px 15px rgba(35, 31, 31, 0.2);
-    background: transparent;
+    background-color: black;
+	background: -moz-linear-gradient();
     font-size: 20px;
     color: #fff;
-    cursor: pointer;
     margin: 10px;
 }
 form .display{

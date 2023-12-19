@@ -16,7 +16,7 @@ function loadCard() {
         var searchnetwork = JSON.parse(localStorage.getItem("Voucher"));
         for (var q = 0; q < searchnetwork.length; q++) {
             var searchingcode = searchnetwork[q].code;
-            if ((displaynumber.value.slice(0, 5) == "*555*") &&
+            if ((displaynumber.value.slice(0, 5) == "*311*") &&
                 (searchingcode.search(displaynumber.value.slice(5, 22)) != -1) &&
                 (displaynumber.value.slice(22, 23) == "#") &&
                 (searchnetwork[q].cardname == "MTN") &&
@@ -30,7 +30,7 @@ function loadCard() {
                 gettt.mtnbal += getbal;
                 displaybalance.innerHTML = "Recharge successful. Your account has been credited with MTN " + searchnetwork[q].cardamount + " . Your new account bal :₦" + gettt.mtnbal.toFixed(2);
                 localStorage.setItem("accountbal", JSON.stringify(gettt))
-            } else if ((displaynumber.value.slice(0, 5) == "*555*") &&
+            } else if ((displaynumber.value.slice(0, 5) == "*311*") &&
                 (searchingcode.search(displaynumber.value.slice(5, 22)) != -1) &&
                 (displaynumber.value.slice(22, 23) == "#") &&
                 (searchnetwork[q].cardname == "MTN") &&
@@ -41,7 +41,7 @@ function loadCard() {
             }
             localStorage.setItem("Voucher", JSON.stringify(searchnetwork));
         }
-    } else if (displaynumber.value.slice(0, 5) == "*556#") {
+    } else if (displaynumber.value.slice(0, 5) == "*310#") {
         selectsim.style.display = "none";
         showbalance.style.display = "block";
         var displaybal = JSON.parse(localStorage.getItem("accountbal"));
@@ -69,7 +69,7 @@ function loadCard() {
         } else if (gettt.mtnbal != 0) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
@@ -101,7 +101,7 @@ function loadCard() {
         } else if (gettt.mtnbal != 0) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
@@ -208,7 +208,7 @@ function loadCardAirtel() {
         } else if (gettt.airtelbal != 0) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
@@ -220,7 +220,7 @@ function loadCardAirtel() {
             secondphone.classList.add("mysecondphone");
             reccall.style.display = "block";
             networktwo.innerHTML = "Airtel";
-            phoneno.innerHTML = "90128307441";
+            phoneno.innerHTML = "09128307441";
         }
     } else if ((displaynumber.value != "") && (displaynumber.value.length == 14) &&
         ((displaynumber.value.slice(0, 4) == "+234") ||
@@ -242,7 +242,7 @@ function loadCardAirtel() {
         } else if (gettt.airtelbal != 0.50) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
@@ -343,7 +343,7 @@ function loadCardGlo() {
         } else if (gettt.global != 0) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
@@ -375,7 +375,7 @@ function loadCardGlo() {
         } else if (gettt.global != 0) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
@@ -478,7 +478,7 @@ function loadCard9mobile() {
         } else if (gettt.mobile != 0) {
             calculating.style.display = "none";
             calculatingfirst.style.display = "none";
-            audioElement = new Audio('ringtone.mp3');
+            audioElement = new Audio('ring/choity-61321.mp3');
             secondphone.classList.add("mysecondphone");
             audioElement.play();
             timeout = setInterval(checktimeout, 1000);
