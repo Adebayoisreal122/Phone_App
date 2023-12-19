@@ -4,10 +4,11 @@
   <title>Tic Tac Toe</title>
   <style>
     .board {
+      margin-top: 6vh;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 10px;
-      width: 300px;
+      width: 80%;
       margin: 0 auto;
     }
 
@@ -31,13 +32,14 @@
     <div class="cell" onclick="makeMove(0, 0)"></div>
     <div class="cell" onclick="makeMove(0, 1)"></div>
     <div class="cell" onclick="makeMove(0, 2)"></div>
-    <div class="cell" onclick="makeMove(1, 0)"></div>
+    <div class="cell" o nclick="makeMove(1, 0)"></div>
     <div class="cell" onclick="makeMove(1, 1)"></div>
     <div class="cell" onclick="makeMove(1, 2)"></div>
     <div class="cell" onclick="makeMove(2, 0)"></div>
     <div class="cell" onclick="makeMove(2, 1)"></div>
     <div class="cell" onclick="makeMove(2, 2)"></div>
   </div>
+  <div id="disp"></div>
 
   <script>
     var board = [
@@ -55,9 +57,11 @@
 
         if (checkWin()) {
           alert('Player ' + currentPlayer + ' wins!');
+          disp.innerHTML = `<p>player ${currentPlayer} wins</p>`
           resetBoard();
         } else if (checkDraw()) {
           alert('It\'s a draw!');
+          disp.innerHTML = `<p> It is a draw</p>`
           resetBoard();
         } else {
           currentPlayer = currentPlayer === 'X' ? 'O' : 'X';

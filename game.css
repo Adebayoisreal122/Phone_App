@@ -1,8 +1,9 @@
 .board {
+    margin-top: 6vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2px;
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
   }
 
@@ -10,9 +11,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 15vh;
     background-color: #eee;
     font-size: 28px;
     border-radius: 15px;
     cursor: pointer;
   }
+  #gaming{
+    margin-top: 10px;
+    box-sizing: border-box;
+height: 475px;
+text-size-adjust: 100%;
+user-select: none;
+display: none;
+
+
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+.tic{
+  color: aquamarine;
+}

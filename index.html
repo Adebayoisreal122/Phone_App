@@ -1,248 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="calc.css">
-	<link rel="stylesheet" href="game.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Phone</title>
 	<link rel="stylesheet" href="music.css">
-	<link rel="stylesheet" href="phone.css">
+	<link rel="stylesheet" href="game.css">
 </head>
-<body>
-    <body>
-		<h1 class="text-center">Double tap on phone to wake it up</h1>
-		<div class="container-fluid">
 
-			<div class="row col-12">
-				<div class=" border border-2 border-dark gen ms-5 w-25 bg-secondary rounded rounded-5 col-12 col-md-4">
+<body onload="getTimeDate()">
+	<h1 class="text-center">Double tap on phone to wake it up</h1>
+	<div class="container-fluid mt-2">
 
-					<div class="all mx-auto">
-						<h4 class="text-white text-center pt-3 ">Generate Voucher</h4>
+		<div class="row">
+			<div class="col-12 col-md-4">
 
-						<div class="row mt-3 w-75 mx-auto mad">
-							<input type="" placeholder="No of card" name="" id="nocard" class="w-100 text-center firstinput">	
+				<div class="all mx-auto">
+					<h4 class="text-white text-center pt-3">Generate Voucher</h4>
 
-							<select id="selectcard" class="ml-4 mt-3 w-75 bg-dark rounded-5 text-white p-1 text-center">
-								<option>Select Card</option>
-								<option>MTN</option>
-								<option>Airtel</option>
-								<option>Glo</option>
-								<option>9mobile</option>
-							</select>	
+					<div class="row mt-3 w-75 mx-auto mad">
+						<input type="" placeholder="No of card" name="" id="nocard"
+							class="w-100 text-center firstinput">
 
-							<select id="amount" class="ml-4 p-1 text-center mt-3 w-75 bg-dark rounded-5 text-white">
-								<option>Select Amount</option>
-								<option>100</option>
-								<option>200</option>
-								<option>500</option>
-								<option>1000</option>
-							</select>
+						<select id="selectcard" class="ml-4 mt-3 w-75  selectcard">
+							<option>Select Card</option>
+							<option>MTN</option>
+							<option>Airtel</option>
+							<option>Glo</option>
+							<option>9mobile</option>
+						</select>
 
-							<button class="btn mt-3 ml-5 btn-success" onclick="generate()">Generate Card</button>
-						</div>
-						<div id="infogenerate" class="w-100 p-2"></div>
-						<div class="m-3 text-white" id="result"></div>
-					</div>	
+						<select id="amount" class="ml-4 mt-3 w-75 selectcard">
+							<option>Select Amount</option>
+							<option>100</option>
+							<option>200</option>
+							<option>500</option>
+							<option>1000</option>
+						</select>
+
+						<button class="btn mt-3 ml-5 btn-light text-muted button" onclick="generate()">Generate
+							Card</button>
+						<button class="btn mt-3 ml-5 btn-light text-muted button" onclick="showAllCard()">Show All
+							Cards</button>
+					</div>
+					<div id="infogenerate" class="w-100 p-2"></div>
+					<div class="m-3 text-white" id="result"></div>
+					<div class="m-2 text-white" id="showallcard"></div>
 				</div>
-				<div class=" border border-3 border-dark gen ms-5 w-25  rounded rounded-5 col-12 col-md-4">
-					<div class="all mx-auto">
-						<div class="w-75 mx-auto house container mt-3 gap-4">
-							<div class="round rounded-5"></div>
 
-							<div class="rect w-50"></div>
+			</div>
+			<div class="col-12 col-md-4 mt-3">
+				<div class="all2 mx-auto">
+					<div>
+						<div class="w-75 mx-auto house">
+							<div class="div1">
+								<div class="camera-section"></div>
+							</div>
+							<div class="div2"></div>
 
-							<div class="round rounded-5"></div></div>
+							<div class="div1">
+								<div class="camera-section"></div>
+							</div>
 						</div>
-						<div>
-						
-						<div id="firstdisplay" ondblclick="Open()"></div>
 
-							<div id="inside" ondblclick="Off()">
+						<div id="firstdisplay" ondblclick="openMe()"></div>
+
+						<div id="inside" ondblclick="offMe()">
+							<div class="network-icons">
+								<span><img src="img/whitesignal1.png"></span>
+								<span><img src="img/whitesignal21.png"></span>
+								<span><img src="img/whitesignal1.png"></span>
+								<span><img src="img/whitesignal1.png"></span>
+								<span><img src="img/whitebattery1.png" class="pl-1"></span>
+							</div>
+
+
+							<div class="text-white font-weight-bold text-center" id="displaydate"></div>
+							<div class="text-white font-weight-bold text-center h1" id="displaytime"></div>
+
+							<div class="screen-button-container pl-2 pr-2">
+								<div class="bg-warning" onclick="openGame()"><img src="img/game.1.png" class="m-1">
+								</div>
+								<div class="bg-danger" onclick="displayCal()"><img src="img/calculator1.png"
+										class="m-1"></div>
+								<div class="bg-light" onclick="openMusic()"><img src="img/music1.png" class="m-1"></div>
+								<div class="bg-info"><img src="img/chrome1.png" class="m-1"></div>
+							</div>
+
+							<div class="w-25 mx-auto"><img src="img/more1.png" class="pl-3"></div>
+							<div class="screen-button-container2 pl-2 pr-2">
+								<div class="bg-success" onclick="displayCall()"><img src="img/phone1.png" class="m-1">
+								</div>
+								<div class="bg-primary"><img src="img/contact1.png" class="m-1"></div>
+								<div class="bg-info"><img src="img/message1.png" class="m-1"></div>
+								<div class="bg-secondary"><img src="img/camera1.png" class="m-1"></div>
+							</div>
+						</div>
+						<div id="phoneCall">
+							<div class="ml-3 mt-3 calldetails">
+								<span class="text-white h6">Calling via</span>
+								<span class="text-white h5" id="network"></span><br>
+								<span class="text-white h4" id="callersno"></span>
+							</div>
+
+							<div class="w-50 mx-auto text-white h6 text-center" id="calculatingfirst">
+								<span id="firstloadhours"></span>
+								<span id="firstloadminutes"></span>
+								<span id="firstloadseconds"></span>
+							</div>
+
+							<div class="w-50 mx-auto mt-5 callicon">
+								<div>
+									<img src="img/speaker1.png" class="p-2">
+								</div>
+
+								<div class="ml-3">
+									<img src="img/mute1.png" class="p-2">
+								</div>
+
+								<div class="ml-3">
+									<img src="img/bullet1.png" class="p-2">
+								</div>
+
+							</div>
+							<div class="showw">
+								<div id="invalidresult" class=" bg-light rounded p-3 w-75 mt-3 mx-auto text-center">
+									<p class="text-dark" id="showsomeresult"></p>
+								</div>
+							</div>
+
+
+							<div class="w-50 mx-auto ml-5 mt-3">
+								<img src="img/maleuser1.png" class="pl-3 pt-5">
+							</div>
+
+							<div class="w-50 mx-auto mt-4">
+								<div class="bg-danger rounded-pill mt-3 shadow-sm" id="makecall" onclick="endCall()">
+									<img src="img/phone1.png" class="w-75">
+								</div>
+							</div>
+						</div>
+						<div class="container caculator-container">
+							<div class="caculator wrapper rounded " id="forcal">
+								<form>
+									<div class="display">
+										<input type="text" name="display">
+									</div>
+									<div>
+										<input type="button" value="AC" onclick="display.value ='' " class="operate">
+										<input type="button" value="DE"
+											onclick="display.value = display.value.toString().slice(0,-1)"
+											class="operate">
+
+										<input type="button" value="." onclick="display.value +='.' ">
+										<input type="button" value="/" onclick="display.value +='/' " class="operate">
+									</div>
+									<div>
+										<input type="button" value="7" onclick="display.value +='7' ">
+										<input type="button" value="8" onclick="display.value +='8'">
+										<input type="button" value="9" onclick="display.value +='9'">
+										<input type="button" value="*" onclick="display.value +='*'" class="operate">
+									</div>
+									<div>
+										<input type="button" value="4" onclick="display.value +='4'">
+										<input type="button" value="5" onclick="display.value +='5'">
+										<input type="button" value="6" onclick="display.value +='6'">
+										<input type="button" value="-" onclick="display.value +='-'" class="operate">
+									</div>
+									<div>
+										<input type="button" value="1" onclick="display.value +='1'">
+										<input type="button" value="2" onclick="display.value +='2'">
+										<input type="button" value="3" onclick="display.value +='3'">
+										<input type="button" value="+" onclick="display.value +='+'" class="operate">
+									</div>
+									<div>
+										<input type="button" value="00" onclick="display.value +='00'">
+										<input type="button" value="0 " onclick="display.value +='0'">
+										<input type="button" value="=" onclick="display.value =eval(display.value)"
+											class="equal operate">
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="bg-info w-100" id="forgame">
+							<center>
+								<h1 class="tic">Tic Tac Toe</h1>
+							</center>
+							<div class="board">
+								<div class="cell" onclick="makeMove(0, 0)"></div>
+								<div class="cell" onclick="makeMove(0, 1)"></div>
+								<div class="cell" onclick="makeMove(0, 2)"></div>
+								<div class="cell" onclick="makeMove(1, 0)"></div>
+								<div class="cell" onclick="makeMove(1, 1)"></div>
+								<div class="cell" onclick="makeMove(1, 2)"></div>
+								<div class="cell" onclick="makeMove(2, 0)"></div>
+								<div class="cell" onclick="makeMove(2, 1)"></div>
+								<div class="cell" onclick="makeMove(2, 2)"></div>
+							</div>
+							<center>
+								<div class="text-light fs-1 my-" id="disp"></div>
+							</center>
+
+						</div>
+						<div id="playmu">
+							<div id="music-list">
+								<p><a
+										href="music/06-Omah-Lay-Temptations-(JustNaija.com).mp3">Omah-Lay-Temptations-(JustNaija.c)</a>
+								</p>
+								<p><a href="music/Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com).mp3
+									  ">Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com)</a></p>
+								<p><a href="music/Kizz-Daniel-One-Day-(JustNaija.com).mp3
+									  ">Kizz-Daniel-One-Day-(JustNaija.com)</a></p>
+								<p><a
+										href="music/Kizz-Daniel-Tempted-To-Steal-(JustNaija.com).mp3">Kizz-Daniel-Tempted-To-Steal-(JustNaija.com)</a>
+								</p>
+								<p><a
+										href="music/11-Omah-Lay-Soso-(JustNaija.com).mp3">Omah-Lay-Soso-(JustNaija.com)</a>
+								</p>
+								<p><a
+										href="music/10-Omah-Lay-Attention-ft-Justin-Bieber-file-1-(JustNaija.com).mp3">Omah-Lay-Attention-ft-Justin-Bieber-file-1-(JustNaija.com)</a>
+								</p>
+							</div>
+							<audio id="music" controls>
+								<source src="" type="audio/mpeg">
+							</audio>
+						</div>
+
+						<!-- PHONE OPREATOR SECTION -->
+						<div class="w-100 mx-auto house mt-2">
+							<div class=""><img src="img/square1.png"></div>
+
+							<div class="" onclick="goBack()"><img src="img/circle1.png"></div>
+							<div class="" onclick="goBack()"><img src="img/sortleft1.png"></div>
+						</div>
+						<!-- End of PHONE OPREATOR SECTION -->
+
+						<!-- Number pressing Operator -->
+						<div class="forcall p-0" id="forcalls">
+							<div class="container-fluid">
 								<div class="fornetwork">
-									<span><img src="image/whitesignal2.png"></span>
-									<span><img src="image/whitesignal1.png" ></span>
-									<span><img src="image/whitesignal2.png"></span>
-									<span><img src="image/whitesignal1.png" ></span>
-									<span><img src="image/whitebattery.png" class="pl-1"></span>
+									<span><img src="img/signal1.png"></span>
+									<span><img src="img/signal2.png"></span>
+									<span><img src="img/signal1.png"></span>
+									<span><img src="img/signal2.png"></span>
+									<span><img src="img/battery.png"></span>
 								</div>
-								
 
-								<div class="clock ms-5 text-light mt-5">
-									<h1 id="time"></h1>
-									<h3 id="show"></h3>
-								</div>
-								<div class="screen ">
-									<div class="screenbutton pl-2 pr-2">
-										<div class="bg-success rounded-4 " onclick="playGame()"><img src="image/game.png" class="m-1"></div>
-										<div class="bg-primary rounded-4 " onclick="DisplayCalc()"><img src="image/calculator.png" class="m-1"></div>
-										<div class="bg-info rounded-4 " onclick="playmus()"><img src="image/music.png" class="m-1"></div>
-										<div class="bg-secondary rounded-4 "><img src="image/chrome.png" class="m-1"></div>
+								<div class="container-fluid forall">
+									<div class="row border shadow-sm numberbox">
+										<div class="col-10 pl-1">
+											<input type="text" name="" id="displaynumber"
+												class="w-100 text-primary h5 text-center">
+										</div>
+										<div class="col-2 p-0" onclick="deleteNumb()">
+											<img src="img/backspace (1).png" class="w-50">
+										</div>
 									</div>
-									<div class="w-25 mx-auto"><img src="image/more.png" class="pl-3"></div>
-									<div class="screenbutton mt-1 pl-2 pr-2">
-										<div class="bg-success rounded-4" onclick="phone()"><img src="image/phone.png" class="m-1"></div>
-										<div class="bg-primary rounded-4 " onclick="contact()"><img src="image/contact.png" class="m-1"></div>
-										<div class="bg-info rounded-4 "><img src="image/message.png" class="m-1"></div>
-										<div class="bg-secondary rounded-4 "><img src="image/camera.png" class="m-1"></div>
+
+									<div class="row  p-1" id="numbs">
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(1)">
+												<span class="h3">1</span>
+												<span class="text-muted h6 text">∞</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(2)">
+												<span class="h3">2</span>
+												<span class="text-muted h6 text">ABC</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(3)">
+												<span class="h3">3</span>
+												<span class="text-muted h6 text">DEF</span>
+											</button>
+										</div>
+									</div>
+
+
+									<div class="row  p-1" id="numbs">
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(4)">
+												<span class="h3">4</span>
+												<span class="text-muted h6 text">GHI</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(5)">
+												<span class="h3">5</span>
+												<span class="text-muted h6 text">JKL</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(6)">
+												<span class="h3">6</span>
+												<span class="text-muted h6 text">MNO</span>
+											</button>
+										</div>
+									</div>
+
+									<div class="row  p-1" id="numbs">
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(7)">
+												<span class="h3">7</span>
+												<span class="text-muted h6 text">PQRS</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(8)">
+												<span class="h3">8</span>
+												<span class="text-muted h6 text">TUV</span>
+											</button>
+										</div>
+
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(9)">
+												<span class="h3">9</span>
+												<span class="text-muted text h6">WXYZ</span>
+											</button>
+										</div>
+									</div>
+
+
+									<div class="row  p-1" id="numbs">
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb('*')">
+												<span class="h4" style="font-size: 30pt;">*</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb(0)">
+												<span class="h2">0</span>
+											</button>
+										</div>
+										<div class="col-4">
+											<button class="btn p-0 button" onclick="displayNumb('#')">
+												<span class="h2">#</span>
+											</button>
+										</div>
+									</div>
+
+									<div class="row w-50 mx-auto">
+										<div class="bg-success rounded-pill mt-2 shadow-sm" id="makecall"
+											onclick="simSelect()">
+											<img src="img/phone1.png" class="w-75">
+										</div>
 									</div>
 								</div>
 							</div>
-							<div id="allcalc" class="calcul form-control">
-				<input class="display" type="text" id="displayResult" readonly>
-				<div class="keypad">
-					<button onclick="appendToDisplay('1')">1</button>
-					<button onclick="appendToDisplay('2')">2</button>
-					<button onclick="appendToDisplay('3')">3</button>
-					<button onclick="clearDisplay()">C</button>
-					<button onclick="appendToDisplay('4')">4</button>
-					<button onclick="appendToDisplay('5')">5</button>
-					<button onclick="appendToDisplay('6')">6</button>
-					<button onclick="appendToDisplay('/')">/</button>
-					<button onclick="appendToDisplay('7')">7</button>
-					<button onclick="appendToDisplay('8')">8</button>
-					<button onclick="appendToDisplay('9')">9</button>
-					<button onclick="appendToDisplay('*')">x</button>
-					<button onclick="appendToDisplay('.')">.</button>
-					<button onclick="appendToDisplay('0')">0</button>
-					<button onclick="appendToDisplay('-')">-</button>
-					<button onclick="appendToDisplay('+')">+</button>
-					<button onclick="calculator()">=</button>
+							<div class="rounded" id="callopacity">
+								<div class="bg-light p-3 w-75 mx-auto mt-3 rounded" id="selectsim">
+									<p class="text-primary h6">Call with:</p>
+									<button class="btn rounded border p-0 w-75 ml-3">
+										<div class="row mx-auto" onclick="loadCard()">
+											<div class="col-2"><img src="img/number11.png"></div>
+											<div class="col-4 pl-3 text-dark">MTN</div>
+										</div>
+									</button>
+									<button class="btn rounded border p-0 w-75 ml-3 mt-1 ">
+										<div class="row mx-auto" onclick="loadCardAirtel()">
+											<div class="col-2"><img src="img/number21.png"></div>
+											<div class="col-4 pl-3">Airtel</div>
+										</div>
+									</button>
+									<button class="btn rounded border p-0 w-75 ml-3 mt-1" onclick="loadCardGlo()">
+										<div class="row mx-auto">
+											<div class="col-2"><img src="img/number31.png"></div>
+											<div class="col-4 pl-3">Glo</div>
+										</div>
+									</button>
+									<button class="btn rounded border p-0 w-75 ml-3 mt-1" onclick="loadCard9mobile()">
+										<div class="row mx-auto">
+											<div class="col-2"><img src="img/number41.png"></div>
+											<div class="col-4 pl-3">9mobile</div>
+										</div>
+									</button>
+									<div class="float-right pt-1 pb-2">
+										<button class="btn pb-2" onclick="delCallOpacity()">Cancel</button>
+									</div>
+								</div>
+
+								<div class="bg-light rounded p-3 w-75 mx-auto" id="showbalance">
+									<div id="displaybalance" class="w-100 text-center"></div>
+									<button class="btn text-primary w-100 p-0" onclick="cancelBalance()">OK</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-		</div>
-		</div>
-		<div id="calculate" class="calc ">
-		</div>
-		<div id="fornumbers">
-		<center>
-		<div class="phone">
-		 <div class="keypading">
-    <div class="keysi">1
-      <span class="letter">ABC</span>
-    </div>
-    <div class="keysi">2
-      <span class="letter">DEF</span>
-    </div>
-    <div class="keysi">3
-      <span class="letter">GHI</span>
-    </div>
-    <div class="keysi">4
-      <span class="letter">JKL</span>
-    </div>
-    <div class="keysi">5
-      <span class="letter">MNO</span>
-    </div>
-    <div class="keysi">6
-      <span class="letter">PQR</span>
-    </div>
-    <div class="keysi">7
-      <span class="letter">STU</span>
-    </div>
-    <div class="keysi">8
-      <span class="letter">VWX</span>
-    </div>
-    <div class="keysi">9
-      <span class="letter">YZ</span>
-    </div>
-    <div class="keysi">*</div>
-    <div class="keysi">0
-      <span class="letter">+</span>
-    </div>
-    <div class="keysi">#</div>
-  </div>
-		</div>
-		</center>
-		</div>
-			<div id="gaming">
-		<center>
-      <h1>Tic Tac Toe</h1>
-    </center>
-    <div class="board">
-    <div class="cell" onclick="makeMove(0, 0)"></div>
-    <div class="cell" onclick="makeMove(0, 1)"></div>
-    <div class="cell" onclick="makeMove(0, 2)"></div>
-    <div class="cell" onclick="makeMove(1, 0)"></div>
-    <div class="cell" onclick="makeMove(1, 1)"></div>
-    <div class="cell" onclick="makeMove(1, 2)"></div>
-    <div class="cell" onclick="makeMove(2, 0)"></div>
-    <div class="cell" onclick="makeMove(2, 1)"></div>
-    <div class="cell" onclick="makeMove(2, 2)"></div>
-  </div>
-		</div>
-		<div id="playmu">
-		<div id="music-list">
-      <p><a href="music/06-Omah-Lay-Temptations-(JustNaija.com).mp3">Omah-Lay-Temptations-(JustNaija.c)</a></p>
-      <p><a href="music/Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com).mp3
-      ">Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com)</a></p>
-      <p><a href="music/Kizz-Daniel-One-Day-(JustNaija.com).mp3
-      ">Kizz-Daniel-One-Day-(JustNaija.com)</a></p>
-	  <p><a href="music/Kizz-Daniel-Tempted-To-Steal-(JustNaija.com).mp3">Kizz-Daniel-Tempted-To-Steal-(JustNaija.com)</a></p>
-	  <p><a href="music/11-Omah-Lay-Soso-(JustNaija.com).mp3">Omah-Lay-Soso-(JustNaija.com)</a></p>
-	  <p><a href="music/10-Omah-Lay-Attention-ft-Justin-Bieber-file-1-(JustNaija.com).mp3">Omah-Lay-Attention-ft-Justin-Bieber-file-1-(JustNaija.com)</a></p>
-    </div>
-    <audio id="music" controls>
-      <source src="" type="audio/mpeg">
-    </audio>
-		</div>
-						<div class="w-75 house mx-auto mt-2 gap-4">
-								<div><img src="image/square.png" alt=""></div>
-	
-								<div onclick="goBack()"><img src="image/circle.png" alt=""></div>
-	
-								<div onclick="goBack()"><img src="image/sortleft.png" alt=""></div>
+			</div>
+
+			<!-- INCOMING VIA CALLING SECTION -->
+			<div class="col-12 col-md-3 rounded" id="secondphone">
+				<div class="all2 mx-auto mt-3">
+					<div class="inner">
+						<div class="w-75 mx-auto house">
+							<div class="div1">
+								<div class="innerdiv"></div>
+							</div>
+
+							<div class="div2"></div>
+
+							<div class="div1">
+								<div class="innerdiv"></div>
 							</div>
 						</div>
-					</div>
-						</div>
-					<div class=" incoming border border-3 border-dark gen ms-5 w-25  rounded rounded-5 col-12 col-md-4">
-						<div class="all mx-auto">
-							<div class="w-75 mx-auto house container mt-3 gap-4">
-								<div class="round rounded-5"></div>
-	
-								<div class="rect w-50"></div>
-	
-								<div class="round rounded-5"></div></div>
+
+						<div class="forreceive">
+							<div class="fornetwork">
+								<span><img src="img/whitesignal1.png"></span>
+								<span><img src="img/whitesignal21.png"></span>
+								<span><img src="img/whitebattery1.png"></span>
+								<span><img src="img/whitesignal21.png"></span>
+								<span><img src="img/whitebattery1.png" class="pl-1"></span>
 							</div>
-							<div ></div>
-	
-								<div >
-									<div class="fornetwork">
-										<span><img src="image/whitesignal2.png"></span>
-										<span><img src="image/whitesignal1.png" ></span>
-										<span><img src="image/whitesignal2.png"></span>
-										<span><img src="image/whitesignal1.png" ></span>
-										<span><img src="image/whitebattery.png" class="pl-1"></span>
-									</div>
-									
-	
-									<div class="clock ms-5 text-light mt-5">
-										<h1 id="time"></h1>
-									</div>
-									<div class="screen ">
-										
+
+							<div class="ml-3 mt-3 calldetails">
+								<span class="text-white h6">Incoming call via</span>
+								<span class="text-white h5" id="networktwo"></span><br>
+								<span class="text-white h4" id="phoneno"></span><br>
+							</div>
+
+							<div class="w-50 mx-auto text-white h6 text-center" id="calculating">
+								<span id="loadhours"></span>
+								<span id="loadminutes"></span>
+								<span id="loadseconds"></span>
+							</div>
+
+							<div class="w-50 mx-auto mt-3 callicon">
+								<div>
+									<img src="img/speaker1.png" class="p-2">
+								</div>
+
+								<div class="ml-3">
+									<img src="img/mute1 (1).png" class="p-2">
+								</div>
+
+								<div class="ml-3">
+									<img src="img/bullet1.png" class="p-2">
+								</div>
+
+							</div>
+
+							<div class="w-50 mx-auto mt-5 ml-5">
+								<img src="img/maleuser1.png" class="pl-3 pt-5">
+							</div>
+
+							<div class="mx-auto mt-5" style="display: flex; flex-direction: row;">
+								<div>
+									<div class="bg-success rounded-pill mt-2  ml-5 shadow-sm" id="reccall"
+										onclick="receiveCall()">
+										<img src="img/phonecallicon.png" class="w-75">
 									</div>
 								</div>
-								<div class="w-75 house mx-auto mt-2 gap-4">
-								<div><img src="image/square.png" alt=""></div>
-	
-								<div onclick="goBack()"><img src="image/circle.png" alt=""></div>
-	
-								<div onclick="goBack()"><img src="image/sortleft.png" alt=""></div>
+								<div class="ml-5 pl-2">
+									<div class="bg-danger rounded-pill mt-2 ml-5 shadow-sm" id="endcall"
+										onclick="endCall()">
+										<img src="img/phone1.png" class="w-75">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
-		<div class="allcalc">
-	<script src="music.js"></script>
-    <script src="scrip.js"></script>
-	<script src="clock.js"></script>
-	<script src="calc.js"></script>
-	<script src="game.js"></script>
+	</div>
+	</div>
+
+	<script type="text/javascript" src="voucherjs.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="call.js"></script>
 </body>
+
 </html>
