@@ -56,8 +56,11 @@
 				</div>
 
 			</div>
+
+			<!-- PHONE BODY SECTION -->
 			<div class="col-12 col-md-4 mt-3">
 				<div class="all2 mx-auto">
+					<!-- Phone camera speaker section wrapper -->
 					<div>
 						<div class="w-75 mx-auto house">
 							<div class="div1">
@@ -72,8 +75,9 @@
 
 						<div id="firstdisplay" ondblclick="openMe()"></div>
 
-						<div id="inside" ondblclick="offMe()">
-							<div class="network-icons">
+						<div id="anotherinner" ondblclick="offMe()">
+							<!-- Phone screen section -->
+							<div class="network-status-icons">
 								<span><img src="img/whitesignal1.png"></span>
 								<span><img src="img/whitesignal21.png"></span>
 								<span><img src="img/whitesignal1.png"></span>
@@ -90,7 +94,7 @@
 								</div>
 								<div class="bg-danger" onclick="displayCal()"><img src="img/calculator1.png"
 										class="m-1"></div>
-								<div class="bg-light" onclick="openMusic()"><img src="img/music1.png" class="m-1"></div>
+								<div class="bg-light"><img src="img/music1.png" class="m-1"></div>
 								<div class="bg-info"><img src="img/chrome1.png" class="m-1"></div>
 							</div>
 
@@ -103,7 +107,8 @@
 								<div class="bg-secondary"><img src="img/camera1.png" class="m-1"></div>
 							</div>
 						</div>
-						<div id="phoneCall">
+						<!-- CALLING NUMBER SECTION -->
+						<div id="forcallnumbers">
 							<div class="ml-3 mt-3 calldetails">
 								<span class="text-white h6">Calling via</span>
 								<span class="text-white h5" id="network"></span><br>
@@ -147,6 +152,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- BEGINING OF CALCULATOR SECTION -->
 						<div class="container caculator-container">
 							<div class="caculator wrapper rounded " id="forcal">
 								<form>
@@ -189,50 +195,22 @@
 								</form>
 							</div>
 						</div>
+						<!-- END OF CALCULATOR SECTION -->
 
+						<!-- BEGINING OF MEMORY GAME SECTION -->
 						<div class="bg-info w-100" id="forgame">
-							<center>
-								<h1 class="tic">Tic Tac Toe</h1>
-							</center>
-							<div class="board">
-								<div class="cell" onclick="makeMove(0, 0)"></div>
-								<div class="cell" onclick="makeMove(0, 1)"></div>
-								<div class="cell" onclick="makeMove(0, 2)"></div>
-								<div class="cell" onclick="makeMove(1, 0)"></div>
-								<div class="cell" onclick="makeMove(1, 1)"></div>
-								<div class="cell" onclick="makeMove(1, 2)"></div>
-								<div class="cell" onclick="makeMove(2, 0)"></div>
-								<div class="cell" onclick="makeMove(2, 1)"></div>
-								<div class="cell" onclick="makeMove(2, 2)"></div>
+
+							<div class="container" id="div">
+								<h2>Memory Game</h2>
+								<div class="game" id="memoryGame"></div>
+								<div class="d-flex">
+									<button class="reset" onclick="resetGame()">Reset Game</button>
+									<div id="winMessage" class="hidden">You Win!</div>
+								</div>
 							</div>
-							<center>
-								<div class="text-light fs-1 my-" id="disp"></div>
-							</center>
 
 						</div>
-						<div id="playmu">
-							<div id="music-list">
-								<p><a
-										href="music/06-Omah-Lay-Temptations-(JustNaija.com).mp3">Omah-Lay-Temptations-(JustNaija.c)</a>
-								</p>
-								<p><a href="music/Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com).mp3
-									  ">Kizz-Daniel-Pak-n-Go-audio-1-(JustNaija.com)</a></p>
-								<p><a href="music/Kizz-Daniel-One-Day-(JustNaija.com).mp3
-									  ">Kizz-Daniel-One-Day-(JustNaija.com)</a></p>
-								<p><a
-										href="music/Kizz-Daniel-Tempted-To-Steal-(JustNaija.com).mp3">Kizz-Daniel-Tempted-To-Steal-(JustNaija.com)</a>
-								</p>
-								<p><a
-										href="music/11-Omah-Lay-Soso-(JustNaija.com).mp3">Omah-Lay-Soso-(JustNaija.com)</a>
-								</p>
-								<p><a
-										href="music/10-Omah-Lay-Attention-ft-Justin-Bieber-file-1-(JustNaija.com).mp3">Omah-Lay-Attention-ft-Justin-Bieber-file-1-(JustNaija.com)</a>
-								</p>
-							</div>
-							<audio id="music" controls>
-								<source src="" type="audio/mpeg">
-							</audio>
-						</div>
+						<!-- End OF MEMORY GAME SECTION -->
 
 						<!-- PHONE OPREATOR SECTION -->
 						<div class="w-100 mx-auto house mt-2">
@@ -260,26 +238,26 @@
 											<input type="text" name="" id="displaynumber"
 												class="w-100 text-primary h5 text-center">
 										</div>
-										<div class="col-2 p-0" onclick="deleteNumb()">
+										<div class="col-2 p-0" onclick="deleteMe()">
 											<img src="img/backspace (1).png" class="w-50">
 										</div>
 									</div>
 
-									<div class="row  p-1" id="numbs">
+									<div class="row  p-1" id="fornumbers">
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(1)">
+											<button class="btn p-0 button" onclick="showNumbers(1)">
 												<span class="h3">1</span>
 												<span class="text-muted h6 text">∞</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(2)">
+											<button class="btn p-0 button" onclick="showNumbers(2)">
 												<span class="h3">2</span>
 												<span class="text-muted h6 text">ABC</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(3)">
+											<button class="btn p-0 button" onclick="showNumbers(3)">
 												<span class="h3">3</span>
 												<span class="text-muted h6 text">DEF</span>
 											</button>
@@ -287,63 +265,62 @@
 									</div>
 
 
-									<div class="row  p-1" id="numbs">
+									<div class="row  p-1" id="fornumbers">
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(4)">
+											<button class="btn p-0 button" onclick="showNumbers(4)">
 												<span class="h3">4</span>
 												<span class="text-muted h6 text">GHI</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(5)">
+											<button class="btn p-0 button" onclick="showNumbers(5)">
 												<span class="h3">5</span>
 												<span class="text-muted h6 text">JKL</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(6)">
+											<button class="btn p-0 button" onclick="showNumbers(6)">
 												<span class="h3">6</span>
 												<span class="text-muted h6 text">MNO</span>
 											</button>
 										</div>
 									</div>
 
-									<div class="row  p-1" id="numbs">
+									<div class="row  p-1" id="fornumbers">
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(7)">
+											<button class="btn p-0 button" onclick="showNumbers(7)">
 												<span class="h3">7</span>
 												<span class="text-muted h6 text">PQRS</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(8)">
+											<button class="btn p-0 button" onclick="showNumbers(8)">
 												<span class="h3">8</span>
 												<span class="text-muted h6 text">TUV</span>
 											</button>
 										</div>
 
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(9)">
+											<button class="btn p-0 button" onclick="showNumbers(9)">
 												<span class="h3">9</span>
 												<span class="text-muted text h6">WXYZ</span>
 											</button>
 										</div>
 									</div>
 
-
-									<div class="row  p-1" id="numbs">
+									<div class="row  p-1" id="fornumbers">
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb('*')">
+											<button class="btn p-0 button" onclick="showNumbers('*')">
 												<span class="h4" style="font-size: 30pt;">*</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb(0)">
+											<button class="btn p-0 button" onclick="showNumbers(0)">
 												<span class="h2">0</span>
 											</button>
 										</div>
 										<div class="col-4">
-											<button class="btn p-0 button" onclick="displayNumb('#')">
+											<button class="btn p-0 button" onclick="showNumbers('#')">
 												<span class="h2">#</span>
 											</button>
 										</div>
@@ -477,9 +454,8 @@
 	</div>
 	</div>
 
-	<script type="text/javascript" src="voucherjs.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="game.js"></script>
-	<script type="text/javascript" src="call.js"></script>
 </body>
 
 </html>
