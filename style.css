@@ -4,7 +4,7 @@
 /* Voulcher css */
 .all {
     background-image: url(img/voucherbg.png);
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
 	height: 650px;
@@ -13,7 +13,6 @@
 	border-radius: 30px;
 	width: 300px;
 	position: relative;
-
 }
 option{
     background-color: #00345B;
@@ -122,7 +121,7 @@ option{
 	padding: 5px;
 }
 
-.network-icons {
+.network-status-icons {
 	margin-left: 170px;
 	width: 40%;
 }
@@ -133,8 +132,8 @@ option{
 	margin-top: 6px;
 }
 
-#inside {
-	background-image: url(img/wallpapper.jpg);
+#anotherinner {
+	background-image: url(img/phonewalpaper.jpg);
 	background-size: cover;
 	height: 516px;
 	position: relative;
@@ -189,7 +188,7 @@ option{
 	user-select: none;
 }
 
-#numbs {
+#fornumbers {
 	background-color: white;
 	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0, 0.1);
 	user-select: none;
@@ -245,7 +244,7 @@ option{
 	user-select: none;
 }
 
-#phoneCall {
+#forcallnumbers {
 	background-image: url("img/bd10.jpg");
 	background-size: cover;
 	background-blend-mode: color-dodge;
@@ -338,15 +337,17 @@ button {
 
 .mysecondphone {
 	animation-name: animate;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	animation-timing-function: ease;
 	animation-delay: -1s;
 }
 
 @keyframes animate {
 	from {margin-left: -300px;}
-	to {margin-left: 60px;}
+	to {margin-left: 50px;}
 }
+
+
 /*GAME CSS*/
 
 #forgame {
@@ -355,16 +356,6 @@ button {
 	height: 516px;
 	position: relative;
 	flex-direction: column;
-	padding: 5px;
-	gap: 30px;
-	user-select: none;
-	display: none;
-}
-#playmu {
-	/* background-color: rgba(255,255,255, 0.1) !important; */
-	background: black !important;
-	height: 516px;
-	position: relative;
 	padding: 5px;
 	gap: 30px;
 	user-select: none;
@@ -446,22 +437,22 @@ h2{
 /*  CAL CSS */
 
 .caculator{
-    background: #5a5f5f;
+    background: #1b1c1c;
     border-radius:  10px;
 	height: 499px;
 }
 .caculator form input{
     border: 0;
-    padding: 0px;
+    padding: 0;
     outline: 0;
     width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 10px;
     box-shadow: -8px -8px 15px rgba(176, 169, 169, 0.1),5px 5px 15px rgba(35, 31, 31, 0.2);
-    background-color: black;
-	background: -moz-linear-gradient();
+    background: transparent;
     font-size: 20px;
     color: #fff;
+    cursor: pointer;
     margin: 10px;
 }
 form .display{
