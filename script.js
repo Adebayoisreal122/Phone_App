@@ -11,6 +11,7 @@ invalidresult.style.display = "none";
 forcal.style.display = "none";
 calculating.style.display = "none";
 calculatingfirst.style.display = "none";
+forcam.style.display = "none";
 
 
 let d = new Date();
@@ -48,6 +49,7 @@ const openMe = () => {
     forcallnumbers.style.display = "none";
     forgame.style.display = "none";
     forcal.style.display = "none";
+    forcam.style.display = "none";
 }
 
 
@@ -69,12 +71,25 @@ const goBack = () => {
         forcallnumbers.style.display = "none";
         forgame.style.display = "none";
         forcal.style.display = "none";
+        forcam.style.display = "none";
     }
 
 }
 
 const openGame = () => {
     forgame.style.display = "block";
+    forcalls.style.display = "none";
+    anotherinner.style.display = "none";
+    showbalance.style.display = "none";
+    infogenerate.style.display = "none";
+    callopacity.style.display = "none";
+    forcallnumbers.style.display = "none";
+    forcam.style.display = "none";
+}
+
+const displayCam = () => {
+    forcam.style.display = "block";
+    forgame.style.display = "none";
     forcalls.style.display = "none";
     anotherinner.style.display = "none";
     showbalance.style.display = "none";

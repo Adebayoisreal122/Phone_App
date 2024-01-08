@@ -104,7 +104,7 @@
 								</div>
 								<div class="bg-primary"><img src="img/contact1.png" class="m-1"></div>
 								<div class="bg-info"><img src="img/message1.png" class="m-1"></div>
-								<div class="bg-secondary"><img src="img/camera1.png" class="m-1"></div>
+								<div class="bg-secondary" onclick="displayCam()" ><img src="img/camera1.png" class="m-1"></div>
 							</div>
 						</div>
 						<!-- CALLING NUMBER SECTION -->
@@ -211,7 +211,19 @@
 
 						</div>
 						<!-- End OF MEMORY GAME SECTION -->
+						<!-- BEGININNG OF CAMERA SECTION -->
+						<div class="bg-dark w-100" id="forcam">
 
+							<div class="container" id="div">
+
+								<video id="cameraStream" style="width: 100%; height: 480px;" autoplay></video>
+								<center>
+									<div id="captureButton"><img src="img/snap.webp" style="width: 45px; height: 45px;" alt=""></div>
+								</center>
+								<!-- <button class="btn btn-dark mx-auto" id="captureButton">Capture Photo</button> -->
+							</div>
+						</div>
+						<!-- END OF CAMERA SECTION -->
 						<!-- PHONE OPREATOR SECTION -->
 						<div class="w-100 mx-auto house mt-2">
 							<div class=""><img src="img/square1.png"></div>
@@ -456,6 +468,7 @@
 
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="cam.js"></script>
 </body>
 
 </html>
