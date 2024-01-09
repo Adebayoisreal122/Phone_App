@@ -1,78 +1,85 @@
-var board = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', '']
-];
+let currentPlayer = 'X';
+let playerXName = '';
+let playerOName = '';
+let board = ['', '', '', '', '', '', '', '', ''];
+let gameActive = true;
 
-var currentPlayer = 'X';
+function startGame() {
+    playerXName = document.getElementById('playerX').value || 'Player X';
+    playerOName = document.getElementById('playerO').value || 'Player O';
 
-function makeMove(row, col) {
-  if (board[row][col] === '') {
-    board[row][col] = currentPlayer;
-    document.getElementsByClassName('cell')[row * 3 + col].textContent = currentPlayer;
 
-    if (checkWin()) {
-      // alert('Player ' + currentPlayer + ' wins!');
-      disp.innerHTML = `<p>player ${currentPlayer} wins</p>`
-      resetBoard();
-    } else if (checkDraw()) {
-      // alert('It\'s a draw!');
-      disp.innerHTML = `<p> It is a draw</p>`
-      resetBoard();
-    } else {
-      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    }
-  }
+    disp.innerHTML = `<p>Player X is: ${playerXName} </p>
+    <p>Player O is: ${playerOName} </p>`
+    document.getElementById('playerX').value = ""
+    document.getElementById('playerO').value = ""
+    btnStart.style.display = "none"
 }
 
-function checkWin() {
-  // Check rows
-  for (var row = 0; row < 3; row++) {
-    if (board[row][0] !== '' && board[row][0] === board[row][1] && board[row][0] === board[row][2]) {
-      return true;
+function handleClick(index) {
+    if (gameActive && board[index] === '') {
+        board[index] = currentPlayer;
+        document.getElementById('board').children[index].innerText = currentPlayer;
+        checkWinner();
+        togglePlayer();
     }
-  }
-
-  // Check columns
-  for (var col = 0; col < 3; col++) {
-    if (board[0][col] !== '' && board[0][col] === board[1][col] && board[0][col] === board[2][col]) {
-      return true;
-    }
-  }
-
-  // Check diagonals
-  if (board[0][0] !== '' && board[0][0] === board[1][1] && board[0][0] === board[2][2]) {
-    return true;
-  }
-  if (board[0][2] !== '' && board[0][2] === board[1][1] && board[0][2] === board[2][0]) {
-    return true;
-  }
-
-  return false;
 }
 
-function checkDraw() {
-  for (var row = 0; row < 3; row++) {
-    for (var col = 0; col < 3; col++) {
-      if (board[row][col] === '') {
-        return false;
-      }
+function togglePlayer() {
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+}
+
+function checkWinner() {
+    const winPatterns = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6]             // Diagonals
+    ];
+
+    for (const pattern of winPatterns) {
+        const [a, b, c] = pattern;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            const winnerName = currentPlayer === 'X' ? playerXName : playerOName;
+            document.getElementById('winMessage').innerText = `${winnerName} wins!`;
+            gameActive = false;
+            return;
+        }
     }
-  }
-  return true;
+
+    if (!board.includes('')) {
+        document.getElementById('winMessage').innerText = 'It\'s a draw!';
+        gameActive = false;
+    }
 }
 
-function resetBoard() {
-  board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ];
 
-  var cells = document.getElementsByClassName('cell');
-  for (var i = 0; i < cells.length; i++) {
-    cells[i].textContent = '';
-  }
+function resetGame() {
+    currentPlayer = 'X';
+    playerXName = '';
+    playerOName = '';
+    board = ['', '', '', '', '', '', '', '', ''];
+    gameActive = true;
 
-  currentPlayer = 'X';
+    document.getElementById('playerX').removeAttribute('disabled');
+    document.getElementById('playerO').removeAttribute('disabled');
+
+    document.getElementById('playerX').value = '';
+    document.getElementById('playerO').value = '';
+    document.getElementById('playerX').removeAttribute('placeholder');
+    document.getElementById('playerO').removeAttribute('placeholder');
+
+    const cells = document.getElementById('board').children;
+    for (const cell of cells) {
+        cell.innerText = '';
+    }
+
+    document.getElementById('winMessage').innerText = '';
+
+    const disp = document.getElementById('disp');
+    disp.innerHTML = `<p>Game has been reset.</p>`;
+    setTimeout(() => {
+        disp.style.display = "none";
+      }, 3000);
+    btnStart.style.display = "block";
 }
+
