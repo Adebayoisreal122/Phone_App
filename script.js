@@ -21,7 +21,7 @@ var getTimeDate = () => {
     let myhrs = j.getHours();
     let mymin = j.getMinutes();
     if (myhrs.toString().length < 2) {
-        myhrs = "0" + hr;
+        myhrs = "0" + myhrs;
     }
     if (myhrs > 12) {
         myhrs = myhrs - 12;
@@ -32,7 +32,7 @@ var getTimeDate = () => {
 }
 setInterval(function () {
     getTimeDate();
-}, 1000)
+}, 2000)
 
 
 
@@ -66,17 +66,17 @@ const goBack = () => {
         forcalls.style.display = "none";
         anotherinner.style.display = "block";
         showbalance.style.display = "none";
+        forgame.style.display = "none";
         infogenerate.style.display = "none";
         callopacity.style.display = "none";
         forcallnumbers.style.display = "none";
-        forgame.style.display = "none";
         forcal.style.display = "none";
         forcam.style.display = "none";
     }
 
 }
 
-const openGame = () => {
+const playGame = () => {
     forgame.style.display = "block";
     forcalls.style.display = "none";
     anotherinner.style.display = "none";

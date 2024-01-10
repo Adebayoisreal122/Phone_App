@@ -87,10 +87,10 @@
 
 
 							<div class="text-white font-weight-bold text-center" id="displaydate"></div>
-							<div class="text-white font-weight-bold text-center h1" id="displaytime"></div>
+							<div class="text-white font-weight-bold text-center" id="displaytime"></div>
 
 							<div class="screen-button-container pl-2 pr-2">
-								<div class="bg-warning" onclick="openGame()"><img src="img/game.1.png" class="m-1">
+								<div class="bg-warning" onclick="playGame()"><img src="img/game.1.png" class="m-1">
 								</div>
 								<div class="bg-danger" onclick="displayCal()"><img src="img/calculator1.png"
 										class="m-1"></div>
@@ -199,30 +199,32 @@
 
 						<!-- BEGINING OF MEMORY GAME SECTION -->
 						<div class="bg-info w-100" id="forgame">
-							<div class="containi" id="div">
-								<h1 class="had">Tic Tac Toe</h1>
-								<div>
-									<input class="my-2" type="text" id="playerX" placeholder="First Player">
+							<div class="container" id="div">
+								<div class="containi">
+									<h1 class="had">Tic Tac Toe</h1>
+									<div>
+										<input class="my-2" type="text" id="playerX" placeholder="First Player">
+									</div>
+									<div>
+										<input class="my-2" type="text" id="playerO" placeholder="Second Player">
+									</div>
+									<div onclick="startGame()" id="btnStart">  <button class="rese btn btn-info">start game</button></div>
+									<div class="text-light fs-bolder" id="disp"></div>
+									<div id="board" class="board text-light fw-bolder">
+										<!-- The rest of the code remains the same -->
+										<div class="cell" onclick="handleClick(0)"></div>
+										<div class="cell" onclick="handleClick(1)"></div>
+										<div class="cell" onclick="handleClick(2)"></div>
+										<div class="cell" onclick="handleClick(3)"></div>
+										<div class="cell" onclick="handleClick(4)"></div>
+										<div class="cell" onclick="handleClick(5)"></div>
+										<div class="cell" onclick="handleClick(6)"></div>
+										<div class="cell" onclick="handleClick(7)"></div>
+										<div class="cell" onclick="handleClick(8)"></div>
+									</div>
+									<p class="mt-2 text-light" id="winMessage"></p>
+									<button class="rese" onclick="resetGame()">Reset Game</button>
 								</div>
-								<div>
-									<input class="my-2" type="text" id="playerO" placeholder="Second Player">
-								</div>
-								<div onclick="startGame()" id="btnStart">  <button class="rese btn btn-info">start game</button></div>
-								<div class="text-light fs-bolder" id="disp"></div>
-								<div id="board" class="board">
-									<!-- The rest of the code remains the same -->
-									<div class="cell" onclick="handleClick(0)"></div>
-									<div class="cell" onclick="handleClick(1)"></div>
-									<div class="cell" onclick="handleClick(2)"></div>
-									<div class="cell" onclick="handleClick(3)"></div>
-									<div class="cell" onclick="handleClick(4)"></div>
-									<div class="cell" onclick="handleClick(5)"></div>
-									<div class="cell" onclick="handleClick(6)"></div>
-									<div class="cell" onclick="handleClick(7)"></div>
-									<div class="cell" onclick="handleClick(8)"></div>
-								</div>
-								<p id="winMessage"></p>
-								<button class="rese" onclick="resetGame()">Reset Game</button>
 							</div>
 						</div>
 						<!-- End OF MEMORY GAME SECTION -->
@@ -242,7 +244,6 @@
 						<!-- PHONE OPREATOR SECTION -->
 						<div class="w-100 mx-auto house mt-2">
 							<div class=""><img src="img/square1.png"></div>
-
 							<div class="" onclick="goBack()"><img src="img/circle1.png"></div>
 							<div class="" onclick="goBack()"><img src="img/sortleft1.png"></div>
 						</div>
