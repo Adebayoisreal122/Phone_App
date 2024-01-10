@@ -9,11 +9,11 @@ function startGame() {
     playerOName = document.getElementById('playerO').value || 'Player O';
 
 
-    disp.innerHTML = `<p>Player X is: ${playerXName} </p>
-    <p>Player O is: ${playerOName} </p>`
     document.getElementById('playerX').value = ""
     document.getElementById('playerO').value = ""
     btnStart.style.display = "none"
+    disp.innerHTML = `<p>Player X is: ${playerXName} </p>
+    <p>Player O is: ${playerOName} </p>`
 }
 
 function handleClick(index) {
@@ -65,8 +65,11 @@ function resetGame() {
 
     document.getElementById('playerX').value = '';
     document.getElementById('playerO').value = '';
-    document.getElementById('playerX').removeAttribute('placeholder');
-    document.getElementById('playerO').removeAttribute('placeholder');
+    // document.getElementById('playerX').removeAttribute('placeholder');
+    // document.getElementById('playerO').removeAttribute('placeholder');
+
+    const Start = document.getElementById('btnStart');
+    Start.style.display = "block";
 
     const cells = document.getElementById('board').children;
     for (const cell of cells) {
@@ -74,12 +77,12 @@ function resetGame() {
     }
 
     document.getElementById('winMessage').innerText = '';
+    document.getElementById('disp').innerText = '';
 
-    const disp = document.getElementById('disp');
-    disp.innerHTML = `<p>Game has been reset.</p>`;
+    const dip = document.getElementById('dip');
+    dip.innerHTML = `<p>Game has been reset.</p>`;
     setTimeout(() => {
-        disp.style.display = "none";
+        dip.style.display = "none";
       }, 3000);
-    btnStart.style.display = "block";
 }
 
