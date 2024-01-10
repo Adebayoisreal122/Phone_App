@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="music.css">
 	<link rel="stylesheet" href="game.css">
+	<link rel="stylesheet" href="chrome.css">
 	<title>Phone-App</title>
 </head>
 
@@ -95,7 +96,7 @@
 								<div class="bg-danger" onclick="displayCal()"><img src="img/calculator1.png"
 										class="m-1"></div>
 								<div class="bg-light"><img src="img/music1.png" class="m-1"></div>
-								<div class="bg-info"><img src="img/chrome1.png" class="m-1"></div>
+								<div class="bg-info" onclick="openChrome()"><img src="img/chrome1.png" class="m-1"></div>
 							</div>
 
 							<div class="w-25 mx-auto"><img src="img/more1.png" class="pl-3"></div>
@@ -197,7 +198,7 @@
 						</div>
 						<!-- END OF CALCULATOR SECTION -->
 
-						<!-- BEGINING OF MEMORY GAME SECTION -->
+						<!-- BEGINING GAME SECTION -->
 						<div class="bg-info w-100" id="forgame">
 							<div class="container" id="div">
 								<div class="containi">
@@ -227,7 +228,27 @@
 								</div>
 							</div>
 						</div>
-						<!-- End OF MEMORY GAME SECTION -->
+						<!-- End OF GAME SECTION -->
+						<div class=" bg-info w-100" id="chrom">
+							<div class="container" id="div">
+								<header class="col-lg-12">
+									<div class="col-12 mx-auto"> Google Chrome</div>
+								</header>
+								<main>
+									<div class=".search-container">
+										<form id=" w-50">
+											<input type="text" id="search-input" placeholder="Search Google">
+											<input class="mx-auto" type="submit" value="Google Search">
+											<!-- <button type="submit">Google Search</button> -->
+										</form>
+									</div>
+								</main>
+								<footer>
+									© 2024 Google Chrome
+								</footer>
+							</div>
+						</div>
+
 						<!-- BEGININNG OF CAMERA SECTION -->
 						<div class="bg-dark w-100" id="forcam">
 
